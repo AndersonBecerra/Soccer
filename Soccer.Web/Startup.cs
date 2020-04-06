@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Soccer.Web.Data;
+using Soccer.Web.Helpers;
 
 namespace Soccer.Web
 {
@@ -37,7 +38,8 @@ namespace Soccer.Web
             {
                 cfg.UseSqlServer(Configuration.GetConnectionString("SoccerConnection"));
             });
-
+            services.AddScoped<IImageHelper, ImageHelper>();
+            services.AddScoped<IConverterHelper, ConverterHelper>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
