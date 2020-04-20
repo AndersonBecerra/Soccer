@@ -26,26 +26,41 @@ namespace Soccer.Web.Data
         {
             if (!_context.Teams.Any())
             {
+                AddTeam("Ajax");
                 AddTeam("America");
                 AddTeam("Argentina");
+                AddTeam("Atalanta");
+                AddTeam("Barcelona");
+                AddTeam("Bayern Munich");
+                AddTeam("Benfica");
                 AddTeam("Bolivia");
+                AddTeam("Borussia Dortmund");
                 AddTeam("Brasil");
                 AddTeam("Bucaramanga");
                 AddTeam("Canada");
+                AddTeam("Chelsea");
                 AddTeam("Chile");
                 AddTeam("Colombia");
                 AddTeam("Costa Rica");
                 AddTeam("Ecuador");
                 AddTeam("Honduras");
                 AddTeam("Junior");
+                AddTeam("Juventus");
+                AddTeam("Liverpool");
+                AddTeam("Manchester City");
                 AddTeam("Medellin");
                 AddTeam("Mexico");
                 AddTeam("Millonarios");
+                AddTeam("Monaco");
                 AddTeam("Nacional");
+                AddTeam("Napoles");
                 AddTeam("Once Caldas");
                 AddTeam("Panama");
                 AddTeam("Paraguay");
                 AddTeam("Peru");
+                AddTeam("Porto");
+                AddTeam("PSG");
+                AddTeam("Real Madrid");
                 AddTeam("Santa Fe");
                 AddTeam("Uruguay");
                 AddTeam("USA");
