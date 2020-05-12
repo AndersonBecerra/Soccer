@@ -20,7 +20,7 @@ namespace Soccer.Prism.ViewModels
             ITransformHelper transformHelper) : base(navigationService)
         {
             _transformHelper = transformHelper;
-            Title = "";
+            Title = "Groups";
         }
         public List<Group> Groups
         {
@@ -33,7 +33,6 @@ namespace Soccer.Prism.ViewModels
             base.OnNavigatedTo(parameters);
 
             _tournament = parameters.GetValue<TournamentResponse>("tournament");
-            Title = _tournament.Name;
             Groups = _transformHelper.ToGroups(_tournament.Groups);
         }
     }
