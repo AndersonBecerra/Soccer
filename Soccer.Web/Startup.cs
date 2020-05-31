@@ -51,6 +51,12 @@ namespace Soccer.Web
                 cfg.Password.RequireUppercase = false;
             }).AddEntityFrameworkStores<DataContext>();
 
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Account/NotAuthorized";
+                options.AccessDeniedPath = "/Account/NotAuthorized";
+            });
+
             services.AddTransient<SeedDb>();
             services.AddScoped<IUserHelper, UserHelper>();
             services.AddScoped<IImageHelper, ImageHelper>();
@@ -72,6 +78,7 @@ namespace Soccer.Web
                 app.UseHsts();
             }
 
+            app.UseStatusCodePagesWithReExecute("/error/{0}");
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
